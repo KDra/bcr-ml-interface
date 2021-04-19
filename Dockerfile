@@ -21,4 +21,5 @@ ENV LD_LIBRARY_PATH=/opt/instantclient_21_1/:$LD_LIBRARY_PATH
 RUN ldconfig
 RUN rm -rf /tmp/* /var/cache/apt/archives /usr/share/doc/ /usr/share/man/ /usr/share/locale/ /usr/local/share/doc/ /usr/local/share/man/
 WORKDIR /
-CMD ['python', '--version']
+RUN wget https://tljh.jupyter.org/bootstrap.py
+CMD ['python', 'bootstrap.py', '--admin', 'admin']
